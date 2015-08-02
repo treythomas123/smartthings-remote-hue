@@ -50,9 +50,14 @@ def buttonHandler(evt) {
 }
 
 private setBulbs() {
-    bulbs.setColor(
-        hue: (hue == 101 ? (new Random()).nextInt(100) : hue),
-        saturation: saturation,
-        level: level
-    )
+    if ( level == 0 ) {
+        bulbs.off()
+    }
+    else {
+        bulbs.setColor(
+            hue: (hue == 101 ? (new Random()).nextInt(100) : hue),
+            saturation: saturation,
+            level: level
+        )
+    }
 }
